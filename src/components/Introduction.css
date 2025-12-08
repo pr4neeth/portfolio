@@ -1,0 +1,193 @@
+/* Base Section Styling */
+.intro-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  padding: 50px 0;
+  display: flex;
+}
+
+.intro-container {
+  margin: 0 150px; /* same horizontal gap as navbar */
+  text-align: left;
+  padding-top: 150px;
+}
+
+/* Subtitle */
+.intro-subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #14b8a6;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+/* Title */
+.intro-title {
+  font-size: 3.8rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #f8fafc;
+}
+
+/* Paragraph */
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+  max-width: 50%;
+}
+
+/* Buttons */
+.intro-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.primary-btn {
+  background-color: #14b8a6;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #0d9488;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  border: 2px solid #14b8a6;
+  color: #14b8a6;
+}
+
+.secondary-btn:hover {
+  background-color: #14b8a6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Operating Principles Box */
+.principles-box {
+  margin-top: 3rem;
+  padding: 20px 25px;
+  border: 2px solid #14b8a6;
+  border-radius: 15px;
+  background-color: rgba(30, 41, 59, 0.85);
+}
+
+.principles-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  margin-bottom: 1rem;
+  color: #14b8a6;
+  text-transform: uppercase;
+}
+
+.principles-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.principles-list li {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+.principles-list li strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #f8fafc;
+}
+
+/* Signal Board */
+.signal-board-box {
+  margin-top: 3rem;
+  padding: 20px 25px;
+  border: 2px solid #14b8a6; /* outer border */
+  border-radius: 15px;
+  background-color: rgba(30, 41, 59, 0.85);
+}
+.signal-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  color: #14b8a6;
+  margin-bottom: 0.3rem;
+}
+
+.signal-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: monospace;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  min-height: 1.5em; /* prevent layout shift */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink-cursor {
+  0%, 50% { border-color: #14b8a6; }
+  51%, 100% { border-color: transparent; }
+}
+
+.signal-list {
+  list-style: disc;
+  padding: 15px; /* inner padding */
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid #14b8a6; /* inner border */
+  border-radius: 10px;
+  background-color: rgba(20, 184, 166, 0.05); /* subtle highlight */
+}
+
+.signal-list li{
+  margin-left: 1rem;
+}
+.signal-footer {
+  margin-top: 35px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-container {
+    margin: 0 20px; /* reduce gap on small screens */
+    padding-top: 100px;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .intro-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

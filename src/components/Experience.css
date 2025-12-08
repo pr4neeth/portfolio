@@ -1,0 +1,121 @@
+.exp-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exp-border {
+  border: 2px solid #14b8a6; /* Teal border */
+  border-radius: 16px;
+  padding: 30px;
+  background-color: #0f172a; /* Slightly darker inside */
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.exp-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.exp-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-title-curved {
+  font-size: 1rem;
+  color: #14b8a6;
+  border-radius: 50px;
+  border: 1px solid #14b8a6;
+  padding: 5px 15px; /* horizontal padding bigger than vertical */
+  display: inline-block; /* crucial: wraps only content */
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
+.exp-headline {
+  margin-top: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 16px;
+}
+
+.exp-description p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.exp-right {
+  background-color: #0f172a;
+  border: 2px solid #14b8a6;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 250px;
+  display: inline-block; /* wraps content */
+  align-self: flex-start;
+}
+
+.exp-right h3 {
+  font-size: 0.8rem;
+  color: #14b8a6;
+  margin-bottom: 12px;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.exp-right ul {
+  list-style: disc;
+  color: #cbd5e1;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.exp-right ul li {
+  margin-bottom: 8px;
+}
+
+.full-case-btn-container {
+  margin-top: 20px;
+}
+
+.full-case-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 50px; /* curved border */
+  border: 2px solid #14b8a6;
+  background-color: transparent;
+  color: #14b8a6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.full-case-btn:hover {
+  background-color: #14b8a6;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .exp-main {
+    flex-direction: column;
+  }
+
+  .exp-right {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,145 @@
+/* FullJourney.css (Updated for Academic Journey) */
+
+.full-journey-section {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.full-journey-container {
+  max-width: 1000px;
+  width: 100%;
+  padding-top: 150px;
+  margin: 0 150px;
+}
+
+/* TOP SECTION */
+.journey-top {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.journey-top-subtitle{
+  font-size: 3.2rem;
+  color: #14b8a6;
+  margin: 0;
+}
+
+.journey-top-title {
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+.journey-top-desc {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* EXPERIENCE & ACADEMIC BLOCKS */
+.journey-experience, .academic-card {
+  background: #0f172a;
+  border: 2px solid #14b8a6;
+  border-radius: 16px;
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Header left-right */
+.journ-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.journ-left .journ-role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #14b8a6;
+  margin-bottom: 4px;
+}
+
+.journ-left .journ-company {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+.item-sub {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.journ-right{
+  border: none;
+}
+
+.journ-right .journ-timeline,
+.journ-right .journ-location {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  text-align: right;
+}
+
+/* Description */
+.journ-description p {
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Tools Pills (Work Experience Only) */
+.journ-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tool-pill {
+  border: 1px solid #14b8a6;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #14b8a6;
+}
+
+/* Achievements - 2 blocks per horizontal line */
+.journ-achievements {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 12px;
+}
+
+.achievement {
+  background: #1e293b;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.academic-card .achievement {
+  background: #1c2733; /* slightly lighter/different for academic achievements */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .journ-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .journ-right {
+    text-align: left;
+  }
+  .journ-achievements {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}

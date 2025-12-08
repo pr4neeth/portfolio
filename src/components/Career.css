@@ -1,0 +1,120 @@
+.career-container {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f8fafc;
+    padding: 60px 20px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* center the inner content */
+  }
+  
+  .career-inner {
+    max-width: 1100px; /* same width as other sections */
+    width: 100%;
+  }
+  
+  .career-title {
+    margin:0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+  }
+  
+  .career-subtitle {
+    font-size: 3.2rem;
+    color: #14b8a6;
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .career-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  
+  .career-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #0f172a;
+    border: 2px solid #14b8a6;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    flex-wrap: wrap;
+  }
+  
+  .career-left {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .career-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top:0;
+    margin-bottom: 6px;
+    color: #f8fafc;
+  }
+  
+  .career-company {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: #14b8a6;
+  }
+  
+  .career-description {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  
+  .career-achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .career-pill {
+    border: 1px solid #14b8a6;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    background-color: #0f172a;
+  }
+  
+  .career-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 150px;
+  }
+  
+  .career-timeline, .career-location {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 6px;
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .career-card {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .career-right {
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+  }
+  
