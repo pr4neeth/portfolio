@@ -30,7 +30,7 @@ const Experience = () => {
             </div>
             {/* Read Full Case Button */}
             <div className="full-case-btn-container">
-              <a href="/full-journey" className="full-case-btn">
+              <a href="/potfolio/full-journey" className="full-case-btn">
                 Read Full Case →
               </a>
             </div>
