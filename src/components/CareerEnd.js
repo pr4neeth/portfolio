@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import "./CareerEnd.css";
 
 const CareerEnd = () => {
@@ -19,7 +19,9 @@ const CareerEnd = () => {
             If you’re looking for someone who can define the product story and implement robust systems, let’s connect.
           </p>
           <div className="career-end-actions">
-            {isHomePage && <a href="/portfolio/full-journey" className="career-end-btn">Review the Work</a>}
+            {isHomePage && <Link to="/full-journey" className="career-end-btn">
+                Review the Work
+              </Link>}
             <a href="mailto:praneeth.paladugu2@gmail.com" className="career-end-btn">Send an Email</a>
           </div>
         </div>

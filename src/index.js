@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './index.css';
 import Navbar from './components/Navbar';
 import Introduction from './components/Introduction';
 import Experience from './components/Experience';
-import FullJourney from './components/FullJourney';
+import FullJourney from './components/FullJourney'; 
 import Capabilities from './components/Capabilities';
 import Career from './components/Career';
 import CareerEnd from './components/CareerEnd';
@@ -17,8 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    {/* IMPORTANT: basename added for GitHub Pages */}
-    <Router basename="/portfolio">
+    <Router>
       <Navbar />
 
       <Routes>
@@ -31,7 +30,7 @@ root.render(
               <Experience />
               <Capabilities />
               <Career />
-              <CareerEnd />
+              <CareerEnd showReviewButton={true} />
             </>
           }
         />
@@ -42,7 +41,7 @@ root.render(
           element={
             <>
               <FullJourney />
-              <CareerEnd />
+              <CareerEnd showReviewButton={false} />
             </>
           }
         />

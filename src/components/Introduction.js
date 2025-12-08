@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Introduction.css";
+import { Link } from "react-router-dom";
 
 const quotes = [
   "Building tomorrow's experiences today.",
@@ -59,7 +60,7 @@ const Introduction = () => {
         </p>
 
         <div className="intro-buttons">
-          <a href="/full-journey" className="btn primary-btn">View Full Journey</a>
+          <Link to="/full-journey" className="btn primary-btn">View Full Journey</Link>
           <a href="mailto:praneeth.paladugu2@gmail.com" className="btn secondary-btn">Get in Touch</a>
         </div>
 

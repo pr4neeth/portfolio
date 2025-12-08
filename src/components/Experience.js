@@ -1,5 +1,6 @@
 import React from "react";
 import "./Experience.css";
+import { Link } from "react-router-dom";
 
 const experience = {
   title: "FabLab · Makerspace for students",
@@ -30,9 +31,9 @@ const Experience = () => {
             </div>
             {/* Read Full Case Button */}
             <div className="full-case-btn-container">
-              <a href="/potfolio/full-journey" className="full-case-btn">
-                Read Full Case →
-              </a>
+            <Link to="/full-journey" className="full-case-btn">
+              Read Full Case →
+            </Link>
             </div>
           </div>
 
