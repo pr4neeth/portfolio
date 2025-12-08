@@ -6,18 +6,19 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Introduction from './components/Introduction';
 import Experience from './components/Experience';
-import FullJourney from './components/FullJourney'; // <-- import full journey
-
-import reportWebVitals from './reportWebVitals';
+import FullJourney from './components/FullJourney';
 import Capabilities from './components/Capabilities';
 import Career from './components/Career';
 import CareerEnd from './components/CareerEnd';
+
+import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Router>
+    {/* IMPORTANT: basename added for GitHub Pages */}
+    <Router basename="/portfolio">
       <Navbar />
 
       <Routes>
@@ -31,18 +32,20 @@ root.render(
               <Capabilities />
               <Career />
               <CareerEnd />
-
             </>
           }
         />
 
         {/* FULL JOURNEY PAGE */}
-        <Route path="/full-journey" element={
-          <>
-            <FullJourney />
-            <CareerEnd />
-          </>
-        } />
+        <Route
+          path="/full-journey"
+          element={
+            <>
+              <FullJourney />
+              <CareerEnd />
+            </>
+          }
+        />
       </Routes>
     </Router>
   </React.StrictMode>
