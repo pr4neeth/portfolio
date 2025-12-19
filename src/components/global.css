@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    font-family: Inter, system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  .hero {
+    min-height: 260vh; /* scroll space */
+    display: grid;
+  }
+  
+  /* left side */
+  .hero-text {
+    padding: clamp(2rem, 6vw, 6rem);
+    z-index: 2;
+  }
+  
+  /* right side (canvas) */
+  .hero-canvas {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+  
+  .hero-canvas canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+  
+  /* ✅ Mobile: stack (no sticky) */
+  @media (max-width: 900px) {
+    .hero {
+      min-height: auto;
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-canvas {
+      position: relative;
+      height: 60vh;
+    }
+  }
+  .scene-wrap {
+    width: min(520px, 90%);
+    height: min(520px, 100%);
+  }
+  .scene-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .three-scene {
+    overflow: hidden;
+  }
+  /* Full-page 3D background */
+  .background-globe {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none; /* IMPORTANT: allow clicks through */
+  }
+  
+  /* Ensure canvas fills screen */
+  .background-globe canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+  
+  /* Foreground content */
+  .page-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Optional: subtle dark overlay for readability */
+  .page-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(11, 18, 32, 0.4),
+      rgba(11, 18, 32, 0.85)
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  
+  

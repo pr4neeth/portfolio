@@ -13,6 +13,7 @@ import CareerEnd from './components/CareerEnd';
 
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -28,11 +29,13 @@ root.render(
           path="/"
           element={
             <>
+              {/* <BackgroundGlobe /> */}
               <Introduction />
               <Experience />
               <Capabilities />
               <Career />
               <CareerEnd showReviewButton={true} />
+              <Footer />
             </>
           }
         />
@@ -42,8 +45,10 @@ root.render(
           path="/full-journey"
           element={
             <>
+              {/* <BackgroundGlobe /> */}
               <FullJourney />
               <CareerEnd showReviewButton={false} />
+              <Footer />
             </>
           }
         />

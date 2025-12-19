@@ -1,52 +1,6 @@
-import React, { useState, useEffect } from "react";
 import "./Introduction.css";
 import { Link } from "react-router-dom";
 
-const quotes = [
-  "Building tomorrow's experiences today.",
-  "Code that feels inevitable.",
-  "Systems that scale effortlessly.",
-  "Crafting software that people love.",
-  "From idea to impact, seamlessly.",
-  "Turning complexity into simplicity.",
-  "Software that just works, everywhere.",  
-  "From local dev to global deployment.",
-  "Engineering with intention and clarity.",
-];
-
-const DynamicSubtitle = () => {
-  const [text, setText] = useState("");
-  const [quoteIndex, setQuoteIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentQuote = quotes[quoteIndex];
-    let timeout;
-
-    if (!isDeleting && text.length < currentQuote.length) {
-      // Typing
-      timeout = setTimeout(() => {
-        setText(currentQuote.substring(0, text.length + 1));
-      }, 120);
-    } else if (isDeleting && text.length > 0) {
-      // Deleting
-      timeout = setTimeout(() => {
-        setText(currentQuote.substring(0, text.length - 1));
-      }, 50);
-    } else if (!isDeleting && text.length === currentQuote.length) {
-      // Pause before deleting
-      timeout = setTimeout(() => setIsDeleting(true), 1000);
-    } else if (isDeleting && text.length === 0) {
-      // Move to next quote
-      setIsDeleting(false);
-      setQuoteIndex((prev) => (prev + 1) % quotes.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, quoteIndex]);
-
-  return <p className="signal-subtitle">{text}</p>;
-};
 
 const Introduction = () => {
   return (
@@ -61,13 +15,13 @@ const Introduction = () => {
 
         <div className="intro-buttons">
           <Link to="/full-journey" className="btn primary-btn">View Full Journey</Link>
-          <a href="mailto:praneeth.paladugu2@gmail.com" className="btn secondary-btn">Get in Touch</a>
+          <a href="https://calendar.app.google/dqYteMDMvDuvb48XA" className="btn secondary-btn">Get in Touch</a>
         </div>
 
         {/* Signal Board Section */}
         <div className="signal-board-box">
           <h2 className="signal-heading">Operating Rhythm</h2>
-          <DynamicSubtitle />
+          {/* <DynamicSubtitle /> */}
           <ul className="signal-list">
             <li>Upgrading outdated systems at FabLab and refining old code to improve performance, reliability, and long-term flexibility.</li>
             <li>Developing scalable web pages and piplelines for BYJU’S products, improving UX and lead conversion.</li>

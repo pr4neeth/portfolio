@@ -1,19 +1,42 @@
-/* Navbar Base */
+/* ===== Global safety to prevent horizontal overflow ===== */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== Navbar Base ===== */
 .navbar {
   background-color: #111827;
   color: white;
-  width: calc(100% - 300px); /* add horizontal gap */
-  margin: 20px 150px 0 150px; /* top 10px, sides 20px */
+
+  width: min(1200px, calc(100% - 2rem));
+  margin: 16px auto 0 auto;
+
   position: fixed;
   top: 0;
+
+  /* ✅ IMPORTANT: remove transform centering (breaks fixed children) */
+  left: 0;
+  right: 0;
+
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  border: #fff 1px solid;
-  border-radius: 20px; /* curved corners */
-  padding: 10px 0; /* vertical padding */
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 10px 0;
+
   display: flex;
-  justify-content: center; /* center the navbar contents */
+  justify-content: center;
   align-items: center;
+
+  overflow: visible;
 }
 
 /* Container inside navbar */
@@ -22,28 +45,58 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 /* Logo */
-.navbar-logo a {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 700;
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
-  transition: color 0.3s;
+  color: white;
+  font-weight: 700;
+  min-width: 0;
 }
 
-.navbar-logo a:hover {
-  color: #14b8a6; 
+.logo-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #14b8a6;
+  flex: 0 0 auto;
 }
 
-/* Links Wrapper: center + right */
+.logo-text {
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+/* Links Wrapper (desktop default) */
 .navbar-links-wrapper {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex: 1;
-  justify-content: space-between; /* Center + Right alignment */
+  justify-content: space-between;
+}
+
+/* ✅ Desktop: ensure overlay-specific elements never appear */
+.navbar-backdrop {
+  display: none;
+}
+
+.navbar-panel {
+  display: contents;
+}
+
+.navbar-panel-header {
+  display: none;
 }
 
 /* Main links (center) */
@@ -53,12 +106,14 @@
   list-style: none;
   justify-content: center;
   flex: 1;
+  padding: 0;
+  margin: 0;
 }
 
 .main-links li a {
   text-decoration: none;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   position: relative;
   padding: 4px 0;
@@ -82,9 +137,12 @@
 /* Secondary links (right) */
 .secondary-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.9rem;
   list-style: none;
   text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
 }
 
 .secondary-links li a.pill-link {
@@ -93,8 +151,9 @@
   background-color: #1f2937;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: background-color 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 .secondary-links li a.pill-link:hover {
@@ -106,8 +165,8 @@
 .secondary-links li a.highlight-link {
   text-transform: capitalize;
   background-color: white;
-  color: #111827; /* dark text */
-  font-weight: 600;
+  color: #111827;
+  font-weight: 700;
 }
 
 .secondary-links li a.highlight-link:hover {
@@ -119,58 +178,197 @@
 .menu-icon {
   display: none;
   cursor: pointer;
-}
-
-.logo-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+  background: transparent;
+  border: 0;
   color: white;
-  font-weight: 700;
+  padding: 6px;
+  border-radius: 10px;
 }
 
-.logo-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #14b8a6;
-}
-
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .navbar-links-wrapper {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: #1f2937;
-    display: none;
-    padding: 1rem 0;
-    gap: 1rem;
-  }
-
-  .navbar-links-wrapper.active {
-    display: flex;
-  }
-
-  .main-links,
-  .secondary-links {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+/* Slight tightening before collapse */
+@media screen and (max-width: 1200px) {
+  .logo-text {
+    max-width: 260px;
+    font-size: 1.2rem;
   }
 
   .secondary-links li a.pill-link {
-    width: 80%;
-    margin: 0 auto;
-    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.32rem 0.65rem;
   }
+}
 
+/* ✅ Collapse to hamburger at 1024px */
+@media screen and (max-width: 1024px) {
   .menu-icon {
     display: block;
+  }
+
+  /* Hide desktop inline links by default */
+  .navbar-links-wrapper {
+    display: none;
+  }
+
+  /* Full-screen overlay when open */
+  .navbar-links-wrapper.active {
+    display: block;
+    position: fixed;
+    inset: 0;
+
+    /* ✅ critical for small devices */
+    width: 100dvw;
+    height: 100dvh;
+
+    z-index: 3000;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    /* small side padding so nothing exceeds */
+    padding: calc(env(safe-area-inset-top, 0px) + 16px)
+      12px
+      calc(env(safe-area-inset-bottom, 0px) + 16px);
+  }
+
+  .navbar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+  }
+
+  .navbar-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+
+    /* ✅ never exceed viewport width */
+    width: calc(100dvw - 24px);
+    max-width: 560px;
+
+    margin: 0 auto;
+
+    border-radius: 22px;
+    background: #1f2937;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    max-height: 90dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 18px 16px 22px;
+  }
+
+  /* Sticky header inside panel so close is always visible */
+  .navbar-panel-header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #1f2937;
+    padding: 10px 6px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 5;
+  }
+
+  .navbar-panel-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .panel-title {
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+  }
+
+  .panel-close {
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .panel-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Mobile stacking */
+  .main-links,
+  .secondary-links {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
+
+  .main-links li a {
+    font-size: 1.2rem;
+  }
+
+  .secondary-links li a.pill-link {
+    width: min(320px, 92%);
+    text-align: center;
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    width: min(1200px, calc(100% - 1rem));
+    margin-top: 12px;
+  }
+}
+
+/* Extra small */
+@media screen and (max-width: 425px) {
+  .logo-text {
+    max-width: 150px;
+    font-size: 1.05rem;
+  }
+
+  .logo-image {
+    width: 36px;
+    height: 36px;
+  }
+
+  .panel-title {
+    max-width: 170px;
+  }
+
+  /* ✅ tighten overlay padding on very small screens */
+  .navbar-links-wrapper.active {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .navbar-panel {
+    width: calc(100dvw - 20px);
+    border-radius: 18px;
+  }
+
+  .secondary-links li a.pill-link {
+    width: 100%;
+    max-width: 320px;
   }
 }

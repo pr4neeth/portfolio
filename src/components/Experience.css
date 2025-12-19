@@ -8,13 +8,12 @@
 }
 
 .exp-border {
-  border: 2px solid #14b8a6; /* Teal border */
-  border-radius: 16px;
   padding: 30px;
   background-color: #0f172a; /* Slightly darker inside */
   width: 100%;
   max-width: 1100px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
 }
 
 .exp-main {
@@ -117,5 +116,8 @@
 
   .exp-right {
     max-width: 100%;
+  }
+  .exp-headline{
+    font-size: 2rem;
   }
 }

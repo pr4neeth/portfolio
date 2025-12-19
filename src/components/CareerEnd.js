@@ -4,25 +4,48 @@ import "./CareerEnd.css";
 
 const CareerEnd = () => {
   const location = useLocation();
-
-  // Check if we are on the home page
   const isHomePage = location.pathname === "/";
+
   return (
     <section className="career-end-section">
       <div className="career-end-border">
         <div className="career-end-container">
           <p className="career-end-title">Building with Impact</p>
+
           <h2 className="career-end-subtitle">
             Focus on building software that’s calm, reliable, and scalable.
           </h2>
+
           <p className="career-end-description">
-            If you’re looking for someone who can define the product story and implement robust systems, let’s connect.
+            If you’re looking for someone who can define the product story and
+            implement robust systems, let’s connect.
           </p>
+
           <div className="career-end-actions">
-            {isHomePage && <Link to="/full-journey" className="career-end-btn">
+            {/* ✅ Inverted button */}
+            <a
+              href="https://calendar.app.google/dqYteMDMvDuvb48XA"
+              className="career-end-btn career-end-btn--outline"
+            >
+              Get in Touch
+            </a>
+
+            {isHomePage ? (
+              <Link to="/full-journey" className="career-end-btn">
                 Review the Work
-              </Link>}
-            <a href="mailto:praneeth.paladugu2@gmail.com" className="career-end-btn">Send an Email</a>
+              </Link>
+            ) : (
+              <Link to="/" className="career-end-btn">
+                Back to Home
+              </Link>
+            )}
+
+            <a
+              href="mailto:praneeth.paladugu2@gmail.com"
+              className="career-end-btn"
+            >
+              Send Email
+            </a>
           </div>
         </div>
       </div>
