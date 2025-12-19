@@ -141,4 +141,10 @@
   .journ-achievements {
     grid-template-columns: 1fr; /* 1 per row on mobile */
   }
+  .journey-top-subtitle{
+    font-size: 2rem;
+  }
+  .full-journey-container{
+    margin: 0 0;
+  }
 }
