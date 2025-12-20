@@ -5,7 +5,7 @@ const experiences = [
   {
     role: "Software Developer",
     company: "FabLab – The University of Texas at Arlington",
-    timeline: "Feb 2025 – Present",
+    timeline: "Jan 2025 – Present",
     location: "Arlington, TX",
     description:
       "Engineering FabApp, a large-scale ticketing and resource-management platform used by 15,000+ students. Architected scalable backend systems and built responsive dashboards with role-based access.",
@@ -33,9 +33,9 @@ const experiences = [
     ]
   },
   {
-    role: "Web Developer Intern",
+    role: "Web Development Engineer",
     company: "Odisha Design Council",
-    timeline: "Jun 2021 – Dec 2021",
+    timeline: "Jun 2021 – May 2022",
     location: "Bhubaneswar, India",
     description:
       "Developed an event-focused website showcasing sessions, speakers, and schedules. Implemented a smooth registration pipeline and led a team of five for timely delivery.",

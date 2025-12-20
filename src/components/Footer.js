@@ -35,7 +35,7 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
-            href="https://drive.google.com/file/d/1qxFT7dZRM3IfRBXez6AZC2aN2hdgIr7Y/view"
+            href="https://drive.google.com/file/d/1Xlg1CMojAAn0wJstRf4IvnHKOZlC3-vH/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-pill"

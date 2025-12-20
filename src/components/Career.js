@@ -5,7 +5,7 @@ const careerData = [
   {
     role: "Software Developer",
     company: "FabLab | UTA",
-    timeline: "2025 – Present",
+    timeline: "01/2025 – Present",
     location: "Arlington, TX",
     description: "Scaled FabApp from PHP to React/Node for 15K students, layering Azure SSO and ticketing automation.",
     achievements: [
@@ -17,7 +17,7 @@ const careerData = [
   {
     role: "Software Engineer",
     company: "BYJU’S Think & Learn Pvt. Ltd.",
-    timeline: "2022 – 2023",
+    timeline: "06/2022 – 05/2023",
     location: "Hyderabad, India",
     description: "Developed scalable UIs & APIs improving user experience and conversion rates.",
     achievements: [
@@ -27,9 +27,9 @@ const careerData = [
     ]
   },
   {
-    role: "Web Developer Intern",
+    role: "Web Development Engineer",
     company: "Odisha Design Council",
-    timeline: "06/2021 – 12/2021",
+    timeline: "06/2021 – 05/2022",
     location: "Bhubaneswar, India",
     description: "Developed responsive web pages for an upcoming design event, ensuring alignment with event branding.",
     achievements: [
