@@ -13,7 +13,7 @@ const DESIRED_RADIUS = 2;
 const Globe = forwardRef(function Globe(_, ref) {
   const pivotRef = useRef(null);   // rotates
   const contentRef = useRef(null); // scales
-  const { scene } = useGLTF("/portfolio/models/earth.glb");
+  const { scene } = useGLTF("/models/earth.glb");
 
   useImperativeHandle(ref, () => pivotRef.current);
 
@@ -59,4 +59,4 @@ const Globe = forwardRef(function Globe(_, ref) {
 
 export default Globe;
 
-useGLTF.preload("/portfolio/models/earth.glb");
+useGLTF.preload("/models/earth.glb");
