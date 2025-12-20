@@ -83,7 +83,7 @@ const FullJourney = () => {
           <p className="journey-top-title">Work Archive</p>
           <h2 className="journey-top-subtitle">Case studies with measurable impact.</h2>
           <p className="journey-top-desc">
-            Each project drove measurable improvements—students empowered, systems optimized, workflows streamlined.
+            Each project drove measurable improvements - students empowered, systems optimized, workflows streamlined.
           </p>
         </div>
 
