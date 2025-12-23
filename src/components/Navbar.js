@@ -11,13 +11,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen((v) => !v);
   const closeMenu = () => setIsOpen(false);
 
-  // Close menu on route change
   useEffect(() => {
     closeMenu();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
-  // Prevent body scroll when overlay is open
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -34,7 +31,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Left: Logo */}
         <div className="navbar-logo">
           <Link to="/" className="logo-link" onClick={closeMenu}>
             <img src={profilePic} alt="Praneeth" className="logo-image" />
@@ -42,14 +38,10 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Links wrapper (desktop inline / mobile overlay) */}
         <div className={`navbar-links-wrapper ${isOpen ? "active" : ""}`}>
-          {/* Mobile overlay backdrop (click to close) */}
           <div className="navbar-backdrop" onClick={closeMenu} />
 
-          {/* Mobile panel (on desktop it becomes "contents" via CSS) */}
           <div className="navbar-panel" role="dialog" aria-modal="true">
-            {/* ✅ Render panel header ONLY when menu is open (prevents desktop duplicate) */}
             {isOpen && (
               <div className="navbar-panel-header">
                 <div className="navbar-panel-brand">
@@ -68,16 +60,15 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* Center links */}
             <ul className="navbar-links main-links">
               <li>
-                <Link
-                  to="/"
+                <a
+                  href="/"
                   className={activeLink === "home" ? "active" : ""}
                   onClick={closeMenu}
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -90,7 +81,6 @@ const Navbar = () => {
               </li>
             </ul>
 
-            {/* Right links */}
             <ul className="navbar-links secondary-links">
               <li>
                 <a
@@ -135,7 +125,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           className="menu-icon"
           onClick={toggleMenu}

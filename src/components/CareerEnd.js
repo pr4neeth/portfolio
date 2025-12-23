@@ -22,7 +22,6 @@ const CareerEnd = () => {
           </p>
 
           <div className="career-end-actions">
-            {/* ✅ Inverted button */}
             <a
               href="https://calendar.app.google/dqYteMDMvDuvb48XA"
               className="career-end-btn career-end-btn--outline"
@@ -35,9 +34,9 @@ const CareerEnd = () => {
                 Review the Work
               </Link>
             ) : (
-              <Link to="/" className="career-end-btn">
+              <a href="/" className="career-end-btn">
                 Back to Home
-              </Link>
+              </a>
             )}
 
             <a

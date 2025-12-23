@@ -1,4 +1,3 @@
-/* Base Section Styling */
 .intro-section {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: #f8fafc;
@@ -7,12 +6,11 @@
 }
 
 .intro-container {
-  margin: 0 150px; /* same horizontal gap as navbar */
+  margin: 0 150px;
   text-align: left;
   padding-top: 150px;
 }
 
-/* Subtitle */
 .intro-subtitle {
   font-size: 0.8rem;
   font-weight: 500;
@@ -21,7 +19,6 @@
   letter-spacing: 0.4rem;
 }
 
-/* Title */
 .intro-title {
   font-size: 3.8rem;
   font-weight: 500;
@@ -30,7 +27,6 @@
   color: #f8fafc;
 }
 
-/* Paragraph */
 .intro-text {
   font-size: 1.2rem;
   line-height: 1.7;
@@ -39,7 +35,6 @@
   max-width: 50%;
 }
 
-/* Buttons */
 .intro-buttons {
   display: flex;
   gap: 20px;
@@ -75,7 +70,6 @@
   transform: translateY(-2px);
 }
 
-/* Operating Principles Box */
 .principles-box {
   margin-top: 3rem;
   padding: 20px 25px;
@@ -112,7 +106,6 @@
   color: #f8fafc;
 }
 
-/* Signal Board */
 .signal-board-box {
   margin-top: 3rem;
   border-radius: 15px;
@@ -134,7 +127,7 @@
   font-family: monospace;
   color: #e2e8f0;
   margin-bottom: 1rem;
-  min-height: 1.5em; /* prevent layout shift */
+  min-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -146,14 +139,14 @@
 
 .signal-list {
   list-style: disc;
-  padding: 15px; /* inner padding */
+  padding: 15px;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   color: #f8fafc;
   font-size: 0.9rem;
   line-height: 1.5;
-  background-color: rgba(20, 184, 166, 0.05); /* subtle highlight */
+  background-color: rgba(20, 184, 166, 0.05);
   border-radius: 10px;
 }
 
@@ -168,10 +161,9 @@
   letter-spacing: 0.1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .intro-container {
-    margin: 0 20px; /* reduce gap on small screens */
+    margin: 0 20px;
     padding-top: 100px;
   }
 

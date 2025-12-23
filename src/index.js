@@ -24,12 +24,10 @@ root.render(
       <Navbar />
 
       <Routes>
-        {/* HOME PAGE */}
         <Route
           path="/"
           element={
             <>
-              {/* <BackgroundGlobe /> */}
               <Introduction />
               <Experience />
               <Capabilities />
@@ -40,12 +38,10 @@ root.render(
           }
         />
 
-        {/* FULL JOURNEY PAGE */}
         <Route
           path="/full-journey"
           element={
             <>
-              {/* <BackgroundGlobe /> */}
               <FullJourney />
               <CareerEnd showReviewButton={false} />
               <Footer />

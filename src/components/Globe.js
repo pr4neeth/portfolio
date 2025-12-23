@@ -11,8 +11,8 @@ import { Box3, Vector3 } from "three";
 const DESIRED_RADIUS = 2;
 
 const Globe = forwardRef(function Globe(_, ref) {
-  const pivotRef = useRef(null);   // rotates
-  const contentRef = useRef(null); // scales
+  const pivotRef = useRef(null);
+  const contentRef = useRef(null);
   const { scene } = useGLTF("/models/earth.glb");
 
   useImperativeHandle(ref, () => pivotRef.current);
@@ -31,20 +31,17 @@ const Globe = forwardRef(function Globe(_, ref) {
 
     scene.traverse((child) => {
       if (child && child.isMesh) {
-        child.material.side = 2; // DoubleSide
+        child.material.side = 2;
         child.material.needsUpdate = true;
         child.frustumCulled = false;
       }
     });
 
-    // center
     scene.position.set(-modelInfo.center.x, -modelInfo.center.y, -modelInfo.center.z);
 
-    // scale content
     const scale = DESIRED_RADIUS / modelInfo.radius;
     contentRef.current.scale.setScalar(scale);
 
-    // reset pivot rotation on mount (prevents “cut/jump” after route nav)
     pivotRef.current.rotation.set(0, 0, 0);
   }, [scene, modelInfo.center, modelInfo.radius]);
 

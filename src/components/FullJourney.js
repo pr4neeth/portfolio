@@ -78,7 +78,6 @@ const FullJourney = () => {
   return (
     <section className="full-journey-section">
       <div className="full-journey-container">
-        {/* TOP SECTION */}
         <div className="journey-top">
           <p className="journey-top-title">Work Archive</p>
           <h2 className="journey-top-subtitle">Case studies with measurable impact.</h2>
@@ -87,7 +86,6 @@ const FullJourney = () => {
           </p>
         </div>
 
-        {/* WORK EXPERIENCES */}
         {experiences.map((exp, idx) => (
           <div className="journey-experience" key={idx}>
             <div className="journ-header">
@@ -118,7 +116,6 @@ const FullJourney = () => {
           </div>
         ))}
 
-        {/* ACADEMIC JOURNEY */}
         <div className="journey-top" style={{ marginTop: "80px" }}>
           <p className="journey-top-title">Academic Journey</p>
           <h2 className="journey-top-subtitle">Academic milestones with measurable growth.</h2>

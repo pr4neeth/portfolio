@@ -18,10 +18,8 @@ const Introduction = () => {
           <a href="https://calendar.app.google/dqYteMDMvDuvb48XA" className="btn secondary-btn">Get in Touch</a>
         </div>
 
-        {/* Signal Board Section */}
         <div className="signal-board-box">
           <h2 className="signal-heading">Operating Rhythm</h2>
-          {/* <DynamicSubtitle /> */}
           <ul className="signal-list">
             <li>Upgrading outdated systems at FabLab and refining old code to improve performance, reliability, and long-term flexibility.</li>
             <li>Developing scalable web pages and piplelines for BYJU’S products, improving UX and lead conversion.</li>
@@ -30,7 +28,6 @@ const Introduction = () => {
           <p className="signal-footer">Working with early teams | experienced teams</p>
         </div>
 
-        {/* Operating Principles Section */}
         <div className="principles-box">
           <h2 className="principles-heading">Operating Principles</h2>
           <ul className="principles-list">

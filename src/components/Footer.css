@@ -14,7 +14,6 @@
     margin: 0 auto;
   }
   
-  /* LEFT */
   .footer-left {
     max-width: 520px;
   }
@@ -33,7 +32,6 @@
     color: rgba(229, 231, 235, 0.75);
   }
   
-  /* RIGHT */
   .footer-links {
     display: flex;
     gap: 12px;
@@ -57,8 +55,7 @@
     border-color: rgba(20, 184, 166, 0.6);
     color: #ffffff;
   }
-  
-  /* BOTTOM */
+
   .footer-bottom {
     max-width: 1400px;
     margin: 28px auto 0;
@@ -72,8 +69,7 @@
   .footer-muted {
     opacity: 0.6;
   }
-  
-  /* RESPONSIVE */
+
   @media (max-width: 768px) {
     .footer-inner {
       flex-direction: column;

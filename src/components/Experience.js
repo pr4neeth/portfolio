@@ -29,7 +29,6 @@ const Experience = () => {
                 <p key={i}>{line}</p>
               ))}
             </div>
-            {/* Read Full Case Button */}
             <div className="full-case-btn-container">
             <Link to="/full-journey" className="full-case-btn">
               Read Full Case →

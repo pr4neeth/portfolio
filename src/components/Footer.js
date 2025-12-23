@@ -5,12 +5,10 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        {/* Left */}
         <div className="footer-left">
           <div className="footer-name">PRANEETH PALADUGU</div>
         </div>
 
-        {/* Right */}
         <div className="footer-links">
           <a
             href="mailto:praneeth.paladugu2@gmail.com"
@@ -45,7 +43,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom row */}
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Praneeth Paladugu.</span>
         <span className="footer-muted">All rights reserved.</span>
