@@ -104,7 +104,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="https://drive.google.com/file/d/1QLUGICqmwTEcMRmBnxN8ZabwtOA6rwK3/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1i4Ud_w8cVCU-OHz7Sm35dUNv9QntWTBH/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="pill-link"
