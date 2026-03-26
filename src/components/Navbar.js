@@ -113,7 +113,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="mailto:praneeth.paladugu2@gmail.com"
+                  href="mailto:praneethpaladugu4@gmail.com"
                   className="pill-link highlight-link"
                   onClick={closeMenu}
                 >

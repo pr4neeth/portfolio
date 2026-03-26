@@ -40,7 +40,7 @@ const CareerEnd = () => {
             )}
 
             <a
-              href="mailto:praneeth.paladugu2@gmail.com"
+              href="mailto:praneethpaladugu4@gmail.com"
               className="career-end-btn"
             >
               Send Email
