@@ -18,6 +18,27 @@ const projects = [
     highlights: ["LLM anomaly detection", "60fps dashboards", "PII encrypted at rest"],
   },
   {
+    name: "CIFAR-10 Image Classifier",
+    tag: "Deep learning",
+    description:
+      "Convolutional neural network for CIFAR-10, tuned with dropout and data augmentation to lift accuracy from 77.36% to 78.50%.",
+    highlights: ["CNN", "78.50% accuracy", "Data augmentation"],
+  },
+  {
+    name: "Spam Message Classifier",
+    tag: "Machine learning",
+    description:
+      "Compared Multinomial and Gaussian Naive Bayes on 1,393 test messages; Multinomial NB with Laplace smoothing hit ~98% accuracy with 0.98 spam precision.",
+    highlights: ["~98% accuracy", "Naive Bayes", "Team of 4"],
+  },
+  {
+    name: "Data Mining Projects",
+    tag: "NLP · prediction · clustering",
+    description:
+      "Fake job posting detection (98.2% accuracy), diabetes prediction (0.84 ROC-AUC), market basket analysis, Spotify clustering and EDA on 119K hotel bookings.",
+    highlights: ["NLTK · scikit-learn", "Apriori · FP-Growth", "Python & R"],
+  },
+  {
     name: "Hospital Management System",
     tag: "Role-based platform",
     description:

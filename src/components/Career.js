@@ -19,7 +19,7 @@ const careerData = [
     company: "BYJU’S Think & Learn Pvt. Ltd.",
     timeline: "06/2022 – 03/2023",
     location: "Hyderabad, India",
-    description: "Engineered backend services and a Kafka event pipeline for 20,000+ active users, and led an end-to-end JWT + RBAC authentication overhaul.",
+    description: "Engineered backend services and a Kafka event pipeline for 20,000+ active users, led a JWT + RBAC authentication overhaul, and took an internal FAQ and onboarding tool from POC to production.",
     achievements: [
       "500K+ events/day",
       "99.9% uptime",

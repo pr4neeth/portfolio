@@ -35,7 +35,8 @@ const experiences = [
       "Delivered an end-to-end authentication overhaul with stateless JWT and role-based access, securing all API endpoints and meeting internal data-protection policy.",
       "Implemented privacy-safe event handling in the Kafka pipeline: data minimization, consent-aware filtering and PII redaction before downstream consumption.",
       "Raised test coverage from ~40% to 80%+ with unit and integration suites, reducing production regressions by ~50% across owned services.",
-      "Established telemetry, alerting thresholds and incident runbooks that reduced mean time to resolution by ~40%."
+      "Established telemetry, alerting thresholds and incident runbooks that reduced mean time to resolution by ~40%.",
+      "Built web front-end proofs of concept for several BYJU’S products, researched automated-mailing products, and took an internal FAQ and onboarding tool from POC to production."
     ]
   },
   {
@@ -75,6 +76,37 @@ const projects = [
     ]
   },
   {
+    name: "Convolutional Neural Network for CIFAR-10",
+    meta: "Academic project · Oct 2024 – Dec 2024",
+    tools: ["Python", "CNN", "Data Augmentation"],
+    achievements: [
+      "Built a CNN for the CIFAR-10 image dataset reaching 77.36% baseline accuracy.",
+      "Experimented with dropout (76.35%) and data augmentation, which raised accuracy to 78.50%."
+    ]
+  },
+  {
+    name: "Spam Message Classification",
+    meta: "Academic project · CSE 5301 · Team of 4 · Apr 2024",
+    tools: ["Python", "scikit-learn", "Naive Bayes"],
+    achievements: [
+      "Built a spam-vs-ham classifier comparing Multinomial and Gaussian Naive Bayes on a 1,393-message test set.",
+      "Multinomial NB with Laplace smoothing reached ~98% accuracy (spam precision 0.98, recall 0.89), against ~91% for Gaussian NB.",
+      "Evaluated with confusion matrices and classification reports covering precision, recall and F1-score."
+    ]
+  },
+  {
+    name: "Data Mining Projects",
+    meta: "Academic · Team of 3",
+    tools: ["pandas", "scikit-learn", "NLTK", "mlxtend", "R · ggplot2", "PandasAI"],
+    achievements: [
+      "Fake job posting detection (NLP): NLTK cleaning and lemmatization, Bag-of-Words vs. TF-IDF bigrams on imbalanced data (~4.8% fraud). Logistic Regression + BoW reached 98.2% accuracy with fraud-class precision 0.99.",
+      "Diabetes prediction: class-balanced Logistic Regression vs. Random Forest with repeated stratified k-fold CV; Logistic Regression scored 0.843 CV ROC-AUC and 0.81 on test.",
+      "Market basket analysis: Apriori and FP-Growth on ~9.7K transactions (21,293 line items), with a lift-ranked item recommendation function.",
+      "Clustering: K-Means (elbow + silhouette) and Ward/average-linkage agglomerative clustering on Spotify top-2000 audio features, separating energetic and acoustic tracks.",
+      "EDA on 119,390 hotel bookings in Python and R (cleaning, imputation, feature engineering, seasonality), using PandasAI to query the data in natural language."
+    ]
+  },
+  {
     name: "Hospital Management System",
     tools: ["RBAC", "Relational Modeling"],
     achievements: [
@@ -91,6 +123,7 @@ const academics = [
     timeline: "Jan 2024 – Dec 2025",
     location: "Arlington, TX",
     cgpa: "GPA: 4.0/4.0",
+    coursework: "Relevant coursework: Machine Learning, Artificial Intelligence, Data Mining",
     achievements: [
       "Strengthened expertise in machine learning, AI, data analytics, and systems engineering by completing advanced projects and research with measurable outcomes.",
       "Built intelligent systems, participated in collaborative research-oriented projects, and solved real-world engineering problems with a focus on scalability and impact."
@@ -155,7 +188,7 @@ const FullJourney = () => {
           <p className="journey-top-title">Featured Projects</p>
           <h2 className="journey-top-subtitle">Systems built end to end.</h2>
           <p className="journey-top-desc">
-            Independent projects exploring distributed systems, AI-assisted products and secure data handling.
+            Projects spanning distributed systems, AI-assisted products, machine learning and data mining.
           </p>
         </div>
 
@@ -164,6 +197,7 @@ const FullJourney = () => {
             <div className="journ-header">
               <div className="journ-left">
                 <p className="journ-role">{proj.name}</p>
+                {proj.meta && <p className="journ-company">{proj.meta}</p>}
               </div>
             </div>
             <div className="journ-tools">
@@ -196,6 +230,7 @@ const FullJourney = () => {
                 <p className="journ-role">{acad.role}</p>
                 <p className="journ-company">{acad.company}</p>
                 {acad.cgpa && <p className="item-sub">{acad.cgpa}</p>}
+                {acad.coursework && <p className="item-sub">{acad.coursework}</p>}
               </div>
               <div className="journ-right">
                 <p className="journ-timeline">{acad.timeline}</p>
