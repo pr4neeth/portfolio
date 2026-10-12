@@ -5,37 +5,37 @@ const careerData = [
   {
     role: "Software Developer",
     company: "FabLab | UTA",
-    timeline: "01/2025 – Present",
+    timeline: "02/2025 – Present",
     location: "Arlington, TX",
-    description: "Scaled FabApp from PHP to React/Node for 15K students, layering Azure SSO and ticketing automation.",
+    description: "Rebuilt the backend query layer and REST microservices behind the makerspace platform, with caching, rate limiting and privacy-safe design.",
     achievements: [
-      "15K+ students",
-      "3× faster",
-      "Scalable REST APIs"
+      "8× faster responses",
+      "500+ concurrent users",
+      "~40% less peak load"
     ]
   },
   {
     role: "Software Engineer",
     company: "BYJU’S Think & Learn Pvt. Ltd.",
-    timeline: "06/2022 – 05/2023",
+    timeline: "06/2022 – 03/2023",
     location: "Hyderabad, India",
-    description: "Developed scalable UIs & APIs improving user experience and conversion rates.",
+    description: "Engineered backend services and a Kafka event pipeline for 20,000+ active users, and led an end-to-end JWT + RBAC authentication overhaul.",
     achievements: [
-      "20K+ impacted users",
-      "60% increased leads",
-      "30% cost reduction"
+      "500K+ events/day",
+      "99.9% uptime",
+      "7× faster reports"
     ]
   },
   {
     role: "Web Development Engineer",
     company: "Odisha Design Council",
-    timeline: "06/2021 – 05/2022",
+    timeline: "06/2021 – 12/2021",
     location: "Bhubaneswar, India",
-    description: "Developed responsive web pages for an upcoming design event, ensuring alignment with event branding.",
+    description: "Redesigned schemas and query patterns for core data pipelines and delivered full-stack features across 3 client-facing modules.",
     achievements: [
-      "Responsive",
-      "Leadership",
-      "Collaboration"
+      "60% faster system",
+      "3× data volume",
+      "Batch jobs: hours → minutes"
     ]
   }
 ];

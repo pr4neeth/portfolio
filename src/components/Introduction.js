@@ -9,8 +9,9 @@ const Introduction = () => {
         <p className="intro-subtitle">Full-Stack Engineer</p>
         <h1 className="intro-title">Building software that just works.</h1>
         <p className="intro-text">
-          I approach software with intention, thoughtfulness, and precision, building systems that last and
-          turning complex ideas into elegant, scalable solutions people love to use.
+          Full-stack engineer with 3+ years building high-traffic, distributed applications end to end, from
+          pixel-perfect UIs to high-throughput backends. I care about measurable wins: faster queries, steadier
+          systems, and features that reach real users.
         </p>
 
         <div className="intro-buttons">
@@ -21,11 +22,11 @@ const Introduction = () => {
         <div className="signal-board-box">
           <h2 className="signal-heading">Operating Rhythm</h2>
           <ul className="signal-list">
-            <li>Upgrading outdated systems at FabLab and refining old code to improve performance, reliability, and long-term flexibility.</li>
-            <li>Developing scalable web pages and piplelines for BYJU’S products, improving UX and lead conversion.</li>
-            <li>Owning performance, not just shipping features.</li>
+            <li>Rebuilding FabLab's backend query layer, cutting dashboard response times from 6.2s to 800ms.</li>
+            <li>Built event-driven pipelines at BYJU’S processing 500K+ events/day for 20,000+ active users.</li>
+            <li>Owning performance, security, and reliability, not just shipping features.</li>
           </ul>
-          <p className="signal-footer">Working with early teams | experienced teams</p>
+          <p className="signal-footer">MS CS, UT Arlington (4.0 GPA) | B.Tech CSE, IIT Bhubaneswar</p>
         </div>
 
         <div className="principles-box">

@@ -3,16 +3,20 @@ import "./Experience.css";
 import { Link } from "react-router-dom";
 
 const experience = {
-  title: "FabLab · Makerspace for students",
-  headline: "Built a large-scale ticketing system empowering students",
+  title: "FabLab · UT Arlington",
+  headline: "Made the makerspace platform 8× faster and ready to scale",
   description: [
-    "Led the development of FabApp, a comprehensive ticketing platform designed to simplify and streamline resource management for students and staff across the makerspace, ensuring seamless access to equipment and services.",
-    "Enhanced the platform’s usability by optimizing workflows, designing intuitive dashboards, and implementing role-based views, enabling personalized experiences and improving operational efficiency for all users."
+    "Rebuilt the core backend query layer, taking average response time from 6.2s to 800ms and eliminating the top user complaint about dashboard load speed.",
+    "Architected RESTful microservices that sustain 500+ concurrent users with zero downtime, and added caching, connection pooling and rate limiting that cut peak server load by ~40%.",
+    "Drove the full SDLC for 3 major backend modules, shipped on schedule with feature flags and phased rollouts, with zero release incidents."
   ],
   systems: [
-    "Redesigned MySQL schemas and API contracts.",
-    "Responsive front-end with dynamic dashboards",
-    "Role-based access and personalized views"
+    "6.2s → 800ms average response time",
+    "500+ concurrent users, zero downtime",
+    "~40% lower server load at peak",
+    "60% fewer re-renders, 1.2s faster Time-to-Interactive",
+    "Audit logging, field-level access control and PII guardrails",
+    "Telemetry and latency dashboards for early warning"
   ]
 };
 
