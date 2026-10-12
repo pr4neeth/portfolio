@@ -5,46 +5,81 @@ const experiences = [
   {
     role: "Software Developer",
     company: "FabLab – The University of Texas at Arlington",
-    timeline: "Jan 2025 – Present",
+    timeline: "Feb 2025 – Present",
     location: "Arlington, TX",
     description:
-      "Engineering FabApp, a large-scale ticketing and resource-management platform used by 15,000+ students. Architected scalable backend systems and built responsive dashboards with role-based access.",
-    tools: ["React.js", "Hapi.js", "REST APIs", "Hapi.js", "MySQL"],
+      "Owning the backend and performance of the makerspace platform: a rebuilt query layer, RESTful microservices that scale without new infrastructure, and privacy-safe, observable systems shipped with zero release incidents.",
+    tools: ["Java", "TypeScript", "React.js", "Hapi.js", "REST Microservices", "MySQL"],
     achievements: [
-      "Served over 15,000 students by designing a seamless registration and authentication system, ensuring smooth access to all tools and resources available in the makerspace.",
-      "Optimized workflows and dashboards by implementing real-time updates and intuitive role-based interfaces, significantly reducing manual intervention and improving operational productivity for staff and students.",
-      "Enhanced operational efficiency by identifying bottlenecks in backend API performance and introducing caching strategies, resulting in faster response times and improved user satisfaction.",
-      "Streamlined resource management processes by integrating automated ticket assignment and tracking, enabling staff to allocate equipment efficiently while minimizing delays and conflicts."
+      "Rebuilt the core backend query layer, cutting average response time from 6.2s to 800ms (8×) and eliminating the top user-reported complaint about dashboard load speed.",
+      "Architected RESTful microservices sustaining 500+ concurrent users with zero downtime, letting the platform scale without additional infrastructure spend.",
+      "Introduced caching, connection pooling and rate limiting, reducing server load by ~40% during peak traffic windows.",
+      "Applied memoization and render optimizations that reduced unnecessary re-renders by 60% and improved Time-to-Interactive by 1.2 seconds.",
+      "Enforced audit logging, field-level access controls and PII-handling guardrails across 3 core modules, and closed a class of input-validation vulnerabilities through OWASP-based code reviews.",
+      "Drove the full SDLC for 3 major backend modules with feature flags and phased rollouts: all shipped on schedule, with zero incidents across releases.",
+      "Championed SOLID and design-pattern practices adopted across the team, cutting bug recurrence in reviewed modules by ~30%.",
+      "Led root cause analysis on the top production incident and instrumented telemetry and latency dashboards for early degradation detection."
     ]
   },
   {
     role: "Software Engineer",
     company: "BYJU’S – Think & Learn Pvt. Ltd.",
-    timeline: "Jun 2022 – May 2023",
+    timeline: "Jun 2022 – Mar 2023",
     location: "Hyderabad, India",
     description:
-      "Built high-performance UIs and backend services for major learning platforms, impacting 20,000+ users. Developed internal automation tools and achieved 80% test coverage on critical APIs.",
-    tools: ["React.js", "Node.js", "Express.js","MongoDB", "Jest"],
+      "Engineered backend services powering 20,000+ active users at 99.9% uptime across a microservices architecture, from real-time event pipelines to a secure authentication layer.",
+    tools: ["Node.js", "Express.js", "Kafka", "MongoDB", "JWT · RBAC", "Jest"],
     achievements: [
-      "Reduced third-party dependency costs by 30% by developing an internal FAQ automation system that replaced expensive external tools and improved efficiency across multiple teams.",
-      "Boosted user conversion funnels by analyzing user engagement and implementing responsive UI improvements, personalized notifications, and streamlined onboarding experiences for thousands of learners.",
-      "Improved overall system reliability by introducing unit and integration testing with 80% coverage, identifying and resolving critical backend API issues before production deployment.",
-      "Developed and deployed automation tools that minimized manual operational tasks, allowing the team to focus on high-impact engineering work while maintaining quality and timeliness."
+      "Built an event-driven pipeline ingesting 500,000+ events/day with sub-second latency, enabling real-time analytics for the product team.",
+      "Cut report generation time from 9s to 1.3s (7×) by re-architecting ORM queries and adding targeted database indexes, improving retention for power users.",
+      "Delivered an end-to-end authentication overhaul with stateless JWT and role-based access, securing all API endpoints and meeting internal data-protection policy.",
+      "Implemented privacy-safe event handling in the Kafka pipeline: data minimization, consent-aware filtering and PII redaction before downstream consumption.",
+      "Raised test coverage from ~40% to 80%+ with unit and integration suites, reducing production regressions by ~50% across owned services.",
+      "Established telemetry, alerting thresholds and incident runbooks that reduced mean time to resolution by ~40%."
     ]
   },
   {
     role: "Web Development Engineer",
     company: "Odisha Design Council",
-    timeline: "Jun 2021 – May 2022",
+    timeline: "Jun 2021 – Dec 2021",
     location: "Bhubaneswar, India",
     description:
-      "Developed an event-focused website showcasing sessions, speakers, and schedules. Implemented a smooth registration pipeline and led a team of five for timely delivery.",
-    tools: ["HTML", "CSS", "JavaScript"],
+      "Full-stack engineering on core data pipelines and client-facing modules, with a focus on schema design and data-processing performance.",
+    tools: ["JavaScript", "HTML", "CSS", "SQL"],
     achievements: [
-      "Successfully launched a fully responsive event website ahead of schedule, ensuring smooth navigation and visibility for all sessions, speakers, and schedule details for attendees.",
-      "Improved registration flow by implementing a step-by-step sign-up system with validations, enabling attendees to register for sessions seamlessly without errors or delays.",
-      "Led a team of five interns, delegating responsibilities effectively, tracking progress, and providing guidance to ensure all project milestones were achieved on time.",
-      "Aligned the website design with the council’s branding guidelines by collaborating with designers and stakeholders, resulting in a professional, cohesive, and visually appealing platform for the event."
+      "Redesigned the relational schema and query patterns for core data pipelines, improving overall system performance by 60% and handling 3× the previous data volume.",
+      "Delivered full-stack features across 3 client-facing modules from requirements through deployment, consistently meeting weekly sprint milestones.",
+      "Applied algorithmic optimizations to data-processing workflows, reducing batch job runtimes from hours to minutes on large datasets."
+    ]
+  }
+];
+
+const projects = [
+  {
+    name: "Distributed URL Shortener with Real-Time Analytics",
+    tools: ["AWS EC2 · S3 · CloudFront", "CI/CD", "Telemetry"],
+    achievements: [
+      "Designed a distributed system capable of 50,000+ requests/second with sub-10ms redirection latency, benchmarked under simulated load.",
+      "Deployed on AWS with a full CI/CD pipeline: zero manual steps from commit to production.",
+      "Built telemetry dashboards for live-site monitoring and incident triage."
+    ]
+  },
+  {
+    name: "Personal Finance Tracker with AI Insights and Reminders",
+    tools: ["Full-Stack", "LLM Integration", "Async Scheduling"],
+    achievements: [
+      "Parallel aggregation pipelines for real-time transaction categorization and budget analytics across thousands of entries with no perceptible lag.",
+      "LLM-powered anomaly detection that flags unusual transactions and sharpens projected-savings accuracy.",
+      "Async reminder scheduling to reduce missed bill payments, plus dashboards with 60fps scrolling via virtualized rendering and debounced fetching.",
+      "PII encrypted at rest, role-based access control, and audit logging on every sensitive operation."
+    ]
+  },
+  {
+    name: "Hospital Management System",
+    tools: ["RBAC", "Relational Modeling"],
+    achievements: [
+      "Role-based, multi-user platform handling 200+ daily transactions.",
+      "Normalized database schema that eliminates redundancy and enforces referential integrity."
     ]
   }
 ];
@@ -82,7 +117,7 @@ const FullJourney = () => {
           <p className="journey-top-title">Work Archive</p>
           <h2 className="journey-top-subtitle">Case studies with measurable impact.</h2>
           <p className="journey-top-desc">
-            Each project drove measurable improvements - students empowered, systems optimized, workflows streamlined.
+            Each role drove measurable improvements: faster systems, safer data, and smoother releases.
           </p>
         </div>
 
@@ -108,6 +143,36 @@ const FullJourney = () => {
             </div>
             <div className="journ-achievements">
               {exp.achievements.map((ach, i) => (
+                <div key={i} className="achievement">
+                  <span>{ach}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        <div className="journey-top" style={{ marginTop: "80px" }} id="projects">
+          <p className="journey-top-title">Featured Projects</p>
+          <h2 className="journey-top-subtitle">Systems built end to end.</h2>
+          <p className="journey-top-desc">
+            Independent projects exploring distributed systems, AI-assisted products and secure data handling.
+          </p>
+        </div>
+
+        {projects.map((proj, idx) => (
+          <div className="journey-experience" key={idx}>
+            <div className="journ-header">
+              <div className="journ-left">
+                <p className="journ-role">{proj.name}</p>
+              </div>
+            </div>
+            <div className="journ-tools">
+              {proj.tools.map((tool, i) => (
+                <span key={i} className="tool-pill">{tool}</span>
+              ))}
+            </div>
+            <div className="journ-achievements">
+              {proj.achievements.map((ach, i) => (
                 <div key={i} className="achievement">
                   <span>{ach}</span>
                 </div>

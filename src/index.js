@@ -10,6 +10,7 @@ import FullJourney from './components/FullJourney';
 import Capabilities from './components/Capabilities';
 import Career from './components/Career';
 import CareerEnd from './components/CareerEnd';
+import Projects from './components/Projects';
 
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './components/ScrollToTop';
@@ -32,6 +33,7 @@ root.render(
               <Experience />
               <Capabilities />
               <Career />
+              <Projects />
               <CareerEnd showReviewButton={true} />
               <Footer />
             </>

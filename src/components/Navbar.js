@@ -106,6 +106,7 @@ const Navbar = () => {
                 <a
                   href="https://drive.google.com/file/d/1i4Ud_w8cVCU-OHz7Sm35dUNv9QntWTBH/view?usp=drive_link"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="pill-link"
                 >
                   Resume
@@ -113,7 +114,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="mailto:praneethpaladugu4@gmail.com"
+                  href="mailto:praneeth.paladugu2@gmail.com"
                   className="pill-link highlight-link"
                   onClick={closeMenu}
                 >

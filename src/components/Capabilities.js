@@ -10,27 +10,40 @@ ScrollTrigger.config({ ignoreMobileResize: true });
 
 const capabilities = [
   {
-    title: "Systems architecture",
+    title: "Backend & Distributed Systems",
     description:
-      "End-to-end product ownership across modern frameworks and tools with a bias for measurable performance.",
-    items: ["Node.js", "React.js", "Express.js", "MongoDB", "MySQL", "Hapi.js", "Angular"],
+      "Event-driven pipelines and REST microservices built for throughput, from 500K+ events/day on Kafka to services holding 500+ concurrent users with zero downtime.",
+    items: ["Node.js", "Express.js", "Hapi.js", "Spring Boot", ".NET", "Microservices", "Kafka", "WebSockets"],
   },
   {
-    title: "Coding Languages",
+    title: "Frontend Engineering",
     description:
-      "Proficient in multiple programming languages to build robust and scalable software solutions.",
-    items: ["Python", "Java", "C/C++", "JavaScript", "TypeScript", "JSP"],
+      "Responsive, fast interfaces with a performance budget: memoization and render optimizations that cut re-renders by 60% and Time-to-Interactive by 1.2s.",
+    items: ["React.js", "Next.js", "Angular", "Redux", "TypeScript", "Webpack", "Figma"],
   },
   {
-    title: "Deployment and Maintenance",
+    title: "Data & Performance",
     description:
-      "Supporting processes like deployment, CI/CD, documentation, and API design to streamline workflows.",
-    items: ["Hosting & Deployment", "CI/CD Pipelines", "Documentation", "API Design", "Testing & QA"],
+      "Schema design, indexing and caching that turn slow paths into fast ones: 6.2s → 800ms dashboards and 9s → 1.3s reports.",
+    items: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "Hibernate / JPA"],
+  },
+  {
+    title: "Cloud, DevOps & Observability",
+    description:
+      "CI/CD from commit to production, telemetry and latency dashboards, and safe rollouts with feature flags and phased deploys.",
+    items: ["AWS", "Azure", "Docker", "Kubernetes", "GitHub Actions", "CI/CD", "Feature Flags"],
+  },
+  {
+    title: "Security, Quality & Languages",
+    description:
+      "Secure-by-default services with JWT/RBAC, OWASP reviews and PII guardrails, backed by test suites that doubled coverage to 80%+.",
+    items: ["Java", "JavaScript", "TypeScript", "Python", "C/C++", "JWT · RBAC", "OWASP", "JUnit · Jest"],
   },
 ];
 
 export default function Capabilities() {
-  const globeRef = useRef(null);
+  // Plain object the scroll timeline writes to; the globe eases toward it.
+  const rotationTarget = useRef({ y: 0 });
   const sectionRef = useRef(null);
 
   const [isDesktop, setIsDesktop] = useState(() => {
@@ -87,7 +100,7 @@ export default function Capabilities() {
     const introThreshold = introSegment * 0.9;
 
     const endDistance = () => {
-      const factor = isDesktop ? 0.55 : 0.7;
+      const factor = isDesktop ? 0.5 : 0.65;
       return `+=${Math.round(window.innerHeight * factor * steps)}`;
     };
 
@@ -104,6 +117,10 @@ export default function Capabilities() {
 
         snap: {
           snapTo: 1 / (steps - 1),
+          // Snap to the nearest step in the scroll direction instead of
+          // flinging several cards ahead based on scroll velocity.
+          inertia: false,
+          directional: true,
           duration: { min: 0.35, max: 0.9 },
           delay: 0.05,
           ease: "power2.out",
@@ -126,20 +143,19 @@ export default function Capabilities() {
 
     tl.set(intro, { autoAlpha: 1, y: 0, display: "block" }, 0);
 
-    const hasGlobe = isDesktop && globeRef.current;
+    const target = rotationTarget.current;
+    target.y = 0;
     const totalTurns = 1;
     const turnPerCard = (Math.PI * 2 * totalTurns) / cards.length;
 
     for (let i = 0; i < cards.length; i++) {
       const stepTime = i + 1;
 
-      if (hasGlobe) {
-        tl.to(
-          globeRef.current.rotation,
-          { y: -(i + 1) * turnPerCard, ease: "none", duration: 1 },
-          stepTime
-        );
-      }
+      tl.to(
+        target,
+        { y: -(i + 1) * turnPerCard, ease: "none", duration: 1 },
+        stepTime
+      );
 
       tl.to(
         cards[i],
@@ -185,7 +201,7 @@ export default function Capabilities() {
         <div className="capabilities-stage">
           <div className="capabilities-intro">
             <div className="capabilities-intro-top">
-              Capabilities shaped by real-world systems and measurable outcomes.
+              Capabilities shaped by real-world systems and measurable outcomes. Scroll to explore.
             </div>
           </div>
 
@@ -206,7 +222,7 @@ export default function Capabilities() {
       </div>
 
       <div className="capabilities-right">
-        {isDesktop ? <ThreeScene globeRef={globeRef} /> : null}
+        {isDesktop ? <ThreeScene rotationTarget={rotationTarget.current} /> : null}
       </div>
     </section>
   );
